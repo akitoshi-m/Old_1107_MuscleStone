@@ -14,7 +14,7 @@
           <div class="user_avatars">
             <!--フォローしているユーザーのリンク付け-->
             <% @users.each do |user| %>
-              <%= link_to "ユーザーの名前にする", user %>
+              <%= link_to user.name , user %>
             <% end %>
           </div>
         <% end %>
