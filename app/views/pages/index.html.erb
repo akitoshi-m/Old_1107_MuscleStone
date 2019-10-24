@@ -1,13 +1,14 @@
+<!-- タイトル -->
 <div class="top-wrapper text-center">
   <div class="container top-container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="title">
-          <h1 class="text-red">MuscleStone</h1>
+          <h1 class="text-shadow">MuscleStone</h1>
         </div>
       </div>
       <div class="col-md-8 col-md-offset-2">
-        <p class="text-red sub-title">常に高みを目指す貴方へ向けた筋トレ管理アプリです。</p>
+        <p class="text-shadow sub-title">常に高みを目指す貴方へ向けた筋トレ管理アプリです。</p>
       </div>
       <div class="col-md-6 col-md-offset-3">
         <%= link_to "アカウント登録", '/users/new',  class: 'btn btn-block btn-white' %>
@@ -16,4 +17,43 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- サービス紹介 -->
+<div class="service-wrapper">
+	<div class="container">
+		<div class="service-title text-center">
+			<h1 class="title">MuscleStoneとは</h1>
+		</div>
+    <div class="service-explanation">
+			<h3 class="service-point text-center">・トレーニングを共有し、違いを高め合えるSNSサービス</h3>
+		</div>
+    <div class="service-explanation">
+			<h3 class="service-point text-center">・自分のセットメニューを登録＆確認ができる</h3>
+		</div>
+		<div class="service-explanation">
+			<h3 class="service-point text-center">・グラフやカレンダーで日々の管理ができる</h3>
+		</div>
+		
+		<div class="row">
+		  <div class="col-md-4">
+	      <div class="service-image">
+          <%= image_tag('icons/f_duck.jpg') %>
+        </div>
+      </div>
+	    <div class="col-md-4">
+	      <div class="service-image">
+          <%= image_tag('icons/f_duck.jpg') %>
+        </div>
+      </div>
+	    <div class="col-md-4">
+	      <div class="service-image">
+          <%= image_tag('icons/f_duck.jpg') %>
+        </div>
+		  </div>
+	     <div class="col-md-6 col-md-offset-3">
+	       <%= link_to "テストユーザーではじめてみる", '#', class: 'btn btn-block btn-yellow' %>
+      </div>
+		</div>
+	</div>
 </div>

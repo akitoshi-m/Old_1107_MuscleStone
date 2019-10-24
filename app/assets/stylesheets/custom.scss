@@ -2,7 +2,11 @@ h1, h2 {
   font-weight: bold;
 }
 
-.text-red {
+.text-center {
+  text-align: center;
+}
+
+.text-shadow {
   color: #fff;
   text-shadow: 2px 2px 1px #000,
     -2px 2px 1px #000,
@@ -20,6 +24,20 @@ h1, h2 {
   //font-weight: bold;
 }
 
+.btn-yellow {
+  color: #000;
+  border: 1px solid #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(255,0,0,0.3);
+  
+  &:hover {
+    color: #000;
+    background-color: rgba(255,0,0,0.6);
+  }
+}
+
 .btn-white {
   color: #fff;
   border: 1px solid #fff;
@@ -33,7 +51,7 @@ h1, h2 {
     background-color: #fff;
   }
 }
-
+//トップページのCSS
 .top-wrapper {
   width: 100vw;
   height: 100vh;
@@ -56,6 +74,14 @@ h1, h2 {
     margin-bottom: 60px;
   }
 }
+
+.service-wrapper {
+  height:200vh;
+  background-color: #DDD
+}
+
+
+
 
 .form-control {
   height: 45px;
@@ -167,7 +193,6 @@ h1, h2 {
   
   text-align: center;
   img {
-    //text-align: center;
     border-radius: 50%;
     width: 180px;
     height: 180px;
