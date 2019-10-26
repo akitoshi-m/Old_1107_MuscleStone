@@ -9,67 +9,16 @@
     <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
 
-    <!-- Bootstrap CSS読み込み-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- appliation.scss,application.jsの読み込み-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Bootstrap JavaScript読み込み-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
-    <% end %>
-    <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-default navbar-fixed navbar-transparent">
-      <div class="container">
-        <!-- ログインの有無で条件分岐 -->
-        <% if logged_in? %>
-          <ul class="nav navbar-nav navbar-left">
-            <li>
-              <%= link_to workouts_path do %>
-                <span><i class="fab fa-gripfire">MuscleStone</i></span>
-              <% end %>
-            </li>
-          </ul>  
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to users_path do %>
-                <span><i class="fas fa-users">ユーザー一覧</i></span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to likes_index_path do %>
-                <span><i class="fas fa-heart">いいね一覧</i></span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_workout_path do %>
-                <span><i class="fas fa-file-signature">投稿する</i></span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to user_path(current_user.id) do %>
-                <span><i class="fas fa-user">マイページ</i></span>
-              <% end %>
-            </li>
-          <% else %>
-          <ul class="nav navbar-nav navbar-left">
-            <li>
-              <%= link_to root_path do %>
-                <span><i class="fab fa-gripfire">MuscleStone</i></span>
-              <% end %>
-            </li>
-          </ul>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-    
+    <%= render 'layouts/header' %>
     <%= yield %>
     
+    <%= render 'layouts/footer' %>
     <script>
       <!-- アラートを5秒で消す -->
       $(function(){

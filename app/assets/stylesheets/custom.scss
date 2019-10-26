@@ -2,6 +2,12 @@ h1, h2 {
   font-weight: bold;
 }
 
+.text-white {
+  color: #fff;
+  font-size: 30px;
+  //font-weight: bold;
+}
+
 .text-center {
   text-align: center;
 }
@@ -17,13 +23,7 @@ h1, h2 {
 .sub-title {
   font-size: 30px;
 }
-
-.text-white {
-  color: #fff;
-  font-size: 30px;
-  //font-weight: bold;
-}
-
+//ボタンについて
 .btn-yellow {
   color: #000;
   border: 1px solid #fff;
@@ -51,6 +51,7 @@ h1, h2 {
     background-color: #fff;
   }
 }
+
 //トップページのCSS
 .top-wrapper {
   width: 100vw;
@@ -106,6 +107,7 @@ h1, h2 {
   }
 }
 
+//アラート表示
 .alert {
   margin-bottom: 0px;
   position: fixed;
@@ -113,14 +115,24 @@ h1, h2 {
   z-index: 10000;
 }
 
+//ナビゲーションバー
 .navbar-transparent {
   font-size: 25px;
   margin-bottom: 0px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: #000;
   a {
-    color: #f00 !important;
+    color: #fff !important;
+    padding:0px;
   }
-
+  
+  .navbar-logo {
+    padding: 0px;
+    //margin-top: 10px;
+  }
+  
+  img {
+    height: 40px;
+  }
 }
 
 .navbar-left li {
@@ -201,7 +213,7 @@ h1, h2 {
 
 .user-data-wrapper { 
   
-  .menu-heading {
+  .user-menu-heading {
     img {
       width: 300px;
       height: 300px;
@@ -263,4 +275,17 @@ h1, h2 {
 //ホバー時のデザイン
 .pagination li a:hover {
   border-radius: 15px; //角を丸くする
+}
+
+.footer {
+  background-color: #222;
+  color: white;   
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      padding: 0;
+    }
+  }
 }
