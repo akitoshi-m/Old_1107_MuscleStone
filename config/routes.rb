@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'chart/new'
+  get 'chart/index'
+  get 'new/index'
   root 'pages#index'
   get 'menus/new'
   get 'comments/new'
