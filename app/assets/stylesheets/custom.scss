@@ -164,7 +164,7 @@ h1, h2 {
 .workout-index-wrapper {
   padding-top: 70px;
   background-color: #EEE; //
-  
+
   // .workout-heading {
   //   text-align: center;
     
@@ -200,7 +200,7 @@ h1, h2 {
     }
   // }
 }
-//ユーザー詳細ページのトップ
+//ユーザー詳細ページ
 .user-top-wrapper { 
   
   text-align: center;
@@ -220,6 +220,14 @@ h1, h2 {
     }
   }
 }
+
+.user-index-wrapper {
+  
+  h2 {
+    text-align: center;
+  }
+}
+
 
 //いいね一覧ページのCSS
 .likes-index-wrapper {

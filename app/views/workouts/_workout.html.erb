@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <h1 class="workout-heading">みんなの筋トレ日記</h1>
+        <h1 class="workout-heading">筋トレ日記</h1>
         <%= paginate @workouts %>
         <% @workouts.each do |workout| %>
           <div class="workout-index">
@@ -45,8 +45,8 @@
             <% end %>
           </div>
         <% end %>
+        <%= paginate @workouts %>
       </div>
     </div>
-    <%= paginate @workouts %>
   </div>
 </div>

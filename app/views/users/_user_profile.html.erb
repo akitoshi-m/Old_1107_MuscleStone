@@ -76,17 +76,17 @@
 
 <div class="user-index-wrapper">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="user-index-wrapper">
+    <% if @user.workouts.any? %>
+      <div class="row">
+        <div class="col-md-12">
+          <h2><%= @user.name %>さんの投稿一覧</h2>
           <p class="workout-index">
-            <h2>ここにユーザーの投稿を一覧表示する</h2>
-              <ol class="microposts">
-                <%= render "workouts/workout" %>
-              </ol>
+            <ol class="microposts">
+              <%= render "workouts/workout" %>
+            </ol>
           </p>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
