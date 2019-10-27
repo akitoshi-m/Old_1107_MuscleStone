@@ -9,8 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #配列形式でグラフ用のデータを作成
-    @chart_data = [['2019-06-01', 100], ['2019-06-02', 200], ['2019-06-03', 150]]
+    @workouts = @user.workouts.page(params[:page]).per(25)
   end
     
   def create
