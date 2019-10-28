@@ -5,10 +5,11 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, allow_nil: true, format: { with: /\A^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}$\z/ }
   
-  has_many :workouts, dependent: :destroy #ユーザーが削除されたときにそのユーザーに紐づいた投稿も削除される
+  has_many :workouts, dependent: :destroy
   has_many :likes
-  has_many :like_workouts, through: :likes, source: 'workout'
   #ユーザーがいいねしたworkoutデータを全て取得できる
+  has_many :like_workouts, through: :likes, source: 'workout'
+  has_many :charts
   
   has_many :active_relationships, class_name: "Relationship",  foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -20,12 +21,10 @@ class User < ApplicationRecord
   def follow(other_user)
     following << other_user
   end
-
   #ユーザーをフォロー解除する
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
-
   #現在のユーザーがフォローしてたらtrueを返す
   def following?(other_user)
     following.include?(other_user)

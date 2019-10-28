@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'chart/new'
-  get 'chart/index'
+
   get 'new/index'
   root 'pages#index'
   get 'menus/new'
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resources :chart
   resources :workouts
   resources :workouts do
     resources :comments
