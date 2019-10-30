@@ -3,10 +3,14 @@
   <h2>自分の体重を入力しよう！︎</h2>
 <% end %>
 
-<%= line_chart @chart_data, width: "800px", height: "500px" %>
+<%= line_chart @chart_data %>
+
+<%= line_chart @chart_data, width: "600px", height: "400px" %>
 
 <%= line_chart @chart_data, id: "users-chart", height: "500px" %>
 
 <%= line_chart @chart_data, min: 1000, max: 5000 %>
 
-<%= line_chart @chart_data, colors: ["pink", "#999"] %>
+<%= line_chart @chart_data, discrete: true %>
+
+<%= line_chart User.group_by_day(:created_at).count %>
