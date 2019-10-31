@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ja
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -18,8 +21,19 @@
 //= require_tree .
 //= require chartkick
 //= require Chart.bundle
-//= require moment
-//= require fullcalendar
-//= require fullcalendar/lang/ja
 //= require_tree
 
+<script>
+$(function () {
+    function eventCalendar() {
+        return $('#calendar').fullCalendar({});
+    };
+    function clearCalendar() {
+        $('#calendar').html('');
+    };
+    $(document).on('turbolinks:load', function () {
+    eventCalendar();
+    });
+    $(document).on('turbolinks:before-cache', clearCalendar);
+    });
+</script>
