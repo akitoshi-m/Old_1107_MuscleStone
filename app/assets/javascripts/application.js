@@ -18,3 +18,8 @@
 //= require_tree .
 //= require chartkick
 //= require Chart.bundle
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ja
+//= require_tree
+
