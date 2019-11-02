@@ -6,12 +6,16 @@
     <div class="user-icon">
       <%= image_tag('icons/f_duck.jpg') %>
     </div>
-    <%= link_to edit_user_path(current_user) do %>
-      <div class="edit-btn">編集</div>
+    <!-- ログインしているユーザー以外は編集とログアウトが操作できない -->
+    <% if current_user.id == @user.id %>
+      <%= link_to edit_user_path(current_user) do %>
+        <div class="edit-btn">編集</div>
+      <% end %>
+      <%= link_to logout_path, method: :delete do %>
+        <div class="logout-btn">ログアウト</div>
+      <% end %>
     <% end %>
-    <%= link_to logout_path, method: :delete do %>
-      <div class="logout-btn">ログアウト</div>
-    <% end %>
+    
 　　<section class="stats">
       <%= render 'shared/stats' %>
     </section>
@@ -64,7 +68,7 @@
             <%= link_to "#" do %>
               <%= image_tag 'icons/f_note.jpg' %>
             <% end %>
-            <%= link_to chart_index_path do %>
+            <%= link_to weights_path do %>
               <%= image_tag 'icons/f_graph.jpg' %>
             <% end %>
           </div>

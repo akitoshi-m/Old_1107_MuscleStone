@@ -19,6 +19,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require Chart.min
 //= require chartkick
 //= require Chart.bundle
 //= require_tree

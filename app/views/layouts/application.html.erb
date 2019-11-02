@@ -8,7 +8,8 @@
     <!-- fontawesome読み込み -->
     <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
-
+    
+    <%= Gon::Base.render_data %>
     <!-- appliation.scss,application.jsの読み込み-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -20,9 +21,9 @@
     
     <%= render 'layouts/footer' %>
     <script>
-      <!-- アラートを5秒で消す -->
+      <!-- アラートを4秒で消す -->
       $(function(){
-        $(".alert").fadeOut(5000);
+        $(".alert").fadeOut(4000);
       });
     </script>
   </body>
