@@ -13,7 +13,11 @@
       <div class="col-md-6 col-md-offset-3">
         <%= link_to "アカウント登録", '/users/new',  class: 'btn btn-block btn-white' %>
         <%= link_to "ログイン", 'sessions/new',      class: 'btn btn-block btn-white' %>
-        <%= link_to "テストユーザーでログイン", '#', class: 'btn btn-block btn-white' %>
+        <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.hidden_field :email, value: 'kawauso@aaa.com' %>
+          <%= f.hidden_field :password, value: 'kawauso12' %>
+          <%= f.submit 'テストユーザーとしてログイン', class: 'btn btn-block btn-white' %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -51,8 +55,13 @@
           <%= image_tag('icons/f_duck.jpg') %>
         </div>
 		  </div>
-	     <div class="col-md-6 col-md-offset-3">
-	       <%= link_to "テストユーザーではじめてみる", '#', class: 'btn btn-block btn-yellow' %>
+	      <div class="col-md-6 col-md-offset-3">
+	        <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.hidden_field :email, value: 'kawauso@aaa.com' %>
+            <%= f.hidden_field :password, value: 'kawauso12' %>
+            <%= f.submit 'テストユーザーとしてログイン', class: 'btn btn-block btn-yellow' %>
+          <% end %>
+        </div>
       </div>
 		</div>
 	</div>
