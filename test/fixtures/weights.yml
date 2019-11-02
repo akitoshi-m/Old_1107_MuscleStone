@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 1
+  measure_date: 2019-11-01
+  user_id: 1
+
+two:
+  weight: 1
+  measure_date: 2019-11-01
+  user_id: 1
