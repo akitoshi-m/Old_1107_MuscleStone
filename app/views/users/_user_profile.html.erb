@@ -60,13 +60,9 @@
         <div class="user-menu-heading">
           <div class="col-md-11 col-md-offset-1">
             <p class="training-menu">トレーニングメニュー</p>
-            <p class="calender">カレンダー</p>
             <p class="graph">グラフ</p>
             <%= link_to menus_path(current_user.id) do %> 
               <%= image_tag 'icons/f_dumbbell.jpg' %>
-            <% end %>
-            <%= link_to "#" do %>
-              <%= image_tag 'icons/f_note.jpg' %>
             <% end %>
             <%= link_to weights_path do %>
               <%= image_tag 'icons/f_graph.jpg' %>
