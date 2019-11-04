@@ -2,6 +2,7 @@ h1, h2 {
   font-weight: bold;
 }
 
+//テキスト全般
 .text-white {
   color: #fff;
   font-size: 30px;
@@ -23,7 +24,8 @@ h1, h2 {
 .sub-title {
   font-size: 30px;
 }
-//ボタンについて
+
+//ボタン全般
 .btn {
   margin:20px 0;
 }
@@ -77,6 +79,78 @@ h1, h2 {
     background-color: #fff;
   }
 }
+//フォロー関連
+//フォローの統計情報
+.stats {
+  font-size: 20px;
+  overflow: auto;
+  margin: 15 auto;
+  padding: 0;
+  a {
+    // float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: inline-block;
+  }
+}
+
+//フォロー詳細ページ
+.user-follow-wrapper {
+  padding-top: 70px;
+  background-color: #EEE;
+  
+  .user-follow-info {
+    
+  }
+}
+
+
+//アラート表示
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+
+//ナビゲーションバー
+.navbar-transparent {
+  font-size: 25px;
+  margin-bottom: 0px;
+  background-color: #444;
+  a {
+    color: #fff !important;
+    padding:0px;
+  }
+  
+  .navbar-logo {
+    padding: 0px;
+    //margin-top: 10px;
+  }
+  
+  img {
+    height: 40px;
+  }
+}
+
+.navbar-left li {
+  
+}
+
+.navbar-right li {
+  font-size:18px;
+  }
 
 
 //トップページのCSS
@@ -119,45 +193,6 @@ h1, h2 {
   height: 45px;
 }
 
-
-//アラート表示
-.alert {
-  margin-bottom: 0px;
-  position: fixed;
-  width: 100%;
-  z-index: 10000;
-}
-
-//ナビゲーションバー
-.navbar-transparent {
-  font-size: 25px;
-  margin-bottom: 0px;
-  background-color: #444;
-  a {
-    color: #fff !important;
-    padding:0px;
-  }
-  
-  .navbar-logo {
-    padding: 0px;
-    //margin-top: 10px;
-  }
-  
-  img {
-    height: 40px;
-  }
-}
-
-.navbar-left li {
-  
-}
-
-.navbar-right li {
-  font-size:18px;
-  }
-
-
-
 //新規投稿ページのCSS
 .workout-new-wrapper {
   padding-top: 70px;
@@ -172,32 +207,34 @@ h1, h2 {
   //投稿一覧
   .workout-index {
     background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 20px 0;
     margin-top: 30px;
     border: 1px solid #000;
     border-radius: 3px;
     //投稿したユーザー名
     .workout-author {
-      padding-right: 20px;
-      padding-left: 20px;
+      padding: 0 20px;
     }
      //投稿したテキスト内容
     .workout-text {
-      padding-right: 20px;
-      padding-left: 20px;
+      font-size: 20px;
+      padding: 10px 20px;
     }
     //画像
     img {
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 10px 0 20px 0;
       width: 100%;
     }
     //いいねとコメントアイコン
-    .workout-index-icon { 
+    .workout-index-icon i { 
+      font-size: 20px;
       width: 35px;
       height: 30px;
-      margin-left: 20px;
+      padding-left: 20px;
+    }
+    .comment {
+      font-size: 20px;
+      padding: 0 0 10px 20px;
     }
   }
 }

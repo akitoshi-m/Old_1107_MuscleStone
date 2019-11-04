@@ -13,7 +13,7 @@
               <% end %>
             </h2>
             <!-- 画像投稿があれば表示 -->
-            <p class="workout-">
+            <p>
               <%= image_tag workout.image.url if workout.image? %>
             </p> 
             <!-- 投稿の内容を表示 -->
@@ -22,23 +22,25 @@
                 <%= workout.description %>
               <% end %>
             </p> 
-            <!-- いいねボタンを表示 -->
-            <% if !workout.like_users.include?(current_user) %>
-              <%= link_to likes_path(workout_id: workout.id), method: :post do %>
-                <i class="far fa-heart like-btn" ></i>
+            <div class="workout-index-icon">
+              <!-- いいねボタンを表示 -->
+              <% if !workout.like_users.include?(current_user) %>
+                <%= link_to likes_path(workout_id: workout.id), method: :post do %>
+                  <i class="far fa-heart like-btn" ></i>
+                <% end %>
+              <% else %>
+                <%= link_to likes_path(workout_id: workout.id), method: :delete do %>
+                  <i class="fas fa-heart unlike-btn"></i>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= link_to likes_path(workout_id: workout.id), method: :delete do %>
-                <i class="fas fa-heart unlike-btn"></i>
+              <!-- いいね数を表示 -->
+              <%= workout.like_users.count %>
+              <!-- コメントマークを表示 -->
+              <%= link_to comments_new_path(workout_id: workout.id), method: :get do %>
+                <i class="far fa-comment"></i>
               <% end %>
-            <% end %>
-            <!-- いいね数を表示 -->
-            <%= workout.like_users.count %>
-            <!-- コメントマークを表示 -->
-            <%= link_to comments_new_path(workout_id: workout.id), method: :get do %>
-              <i class="far fa-comment"></i>
-            <% end %>
-            <h4>みんなのコメント</h4>
+            </div>
+            <div class="comment">みんなのコメント</div>
             <!-- コメント内容を表示 -->
             <% workout.comments.each do |comment| %>
               <p><%= comment.content %></p>

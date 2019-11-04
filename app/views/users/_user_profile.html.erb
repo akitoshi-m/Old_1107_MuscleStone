@@ -8,7 +8,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <div class="user-name"><%= @user.name %></div>
+        <div class="user-name">
+          <%= @user.name %>
+        </div>
         <!-- ログインしているユーザー以外は編集とログアウトが操作できない -->
         <% if current_user.id == @user.id %>
           <%= link_to edit_user_path(current_user) do %>
@@ -18,10 +20,13 @@
             <div class="btn btn-danger edit-btn">ログアウト</div>
           <% end %>
         <% end %>
-      
-  　　<section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
+        <!--フォローフォロワーの数を表示-->
+    　　<section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+        <div>
+          <%= render 'follow_form' if logged_in? %>
+        </div>
       </div>
       <div class="col-xs-6 col-xs-offset-3">
         <div class="user-status text-center">
@@ -40,13 +45,11 @@
             </li>
           </ul>
         </div>
-        <%= render 'follow_form' if logged_in? %>
-        <div class="user-data">
-          <p>名前：<%= @user.name %></p>
-        </div>
+      </div>
     </div>
   </div>
 </div>
+
 <!--ユーザーのトレーニングデータ-->
 <div class="user-data-wrapper">
   <div class="container">
