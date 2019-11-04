@@ -8,7 +8,10 @@
             <%= f.hidden_field :password, :value => @user.password %>            
             <%= f.hidden_field :password_confirmation, :value => @user.password_confirmation %>  
             <!-- プロフィール画像編集 -->
-          
+            <div class="form-group">
+              <%= f.label :プロフィール画像 %>
+              <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/png' %>
+            </div>
             <!-- 名前編集 -->
             <div class="form-group">
               <%= f.label :名前, class: 'text-black' %>

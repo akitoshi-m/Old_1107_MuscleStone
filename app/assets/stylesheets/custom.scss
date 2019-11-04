@@ -26,7 +26,10 @@ h1, h2 {
 //ボタンについて
 .btn {
   margin:20px 0;
-  
+}
+
+.edit-btn {
+  margin: 10px 0 30px 0;
 }
 
 .btn-yellow {
@@ -122,7 +125,6 @@ h1, h2 {
 .users-new-wrapper {
   width: 100vw;
   height: 125vh;
-  background-image: image-url('bg-top.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -219,26 +221,79 @@ h1, h2 {
 }
 //ユーザー詳細ページ
 .user-top-wrapper { 
-  
+  background-color: #DDD;
   text-align: center;
-  img {
+  
+  .user-background-image {
+    position: relative; /* 子要素の起点を指定 */
+    width: 100%;
+    height: 240px;
+  }
+  
+  .user-icon {
+    position: absolute;
+    top: 0; /* 上からの位置指定 */
+    bottom: 0; /* 下からの位置指定 */
+    left: 0; /* 左からの位置指定 */
+    right: 0; /* 右からの位置指定 */
+    margin: 200px auto 0 auto; /* 位置調整と組み合わせて上下中央に */
+    border: 2px #000 solid;
     border-radius: 50%;
     width: 180px;
     height: 180px;
   }
-}
-
-.user-data-wrapper { 
   
-  .user-menu-heading {
-    img {
-      width: 300px;
-      height: 300px;
+  .user-name {
+    font-size: 45px;
+    font-weight: 500;
+    margin: 80px 0 0 0;
+  }
+  
+  .user-status {
+    .status-label {
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      background: #f7f7f7;
+      border-left: solid 6px #ff7c5c;/*左線*/
+      color: #ff7c5c;/*文字色*/
+      font-weight: bold;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    }
+    
+    .status-value {
+      font-size: 17px;
+      // font-weight: bold;
+    }
+    
+    ul {
+      list-style: none;
     }
   }
 }
+//ユーザーのトレーニングデータ
+.user-data-wrapper { 
+  background-color: #DDD;
+  img {
+    padding-top: 10px;
+    width: 300px;
+    height: 300px;
+  }
 
+  .data-sub-title {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-top: solid 4px #000;
+    border-bottom: solid 4px #000;
+    background: #fff;
+  }
+}
+//ユーザーの投稿
 .user-index-wrapper {
+  background-color: #DDD;
   
   h2 {
     text-align: center;
