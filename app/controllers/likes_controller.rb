@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   def index
-    @like_workouts = current_user.like_workouts
+    @like_workouts = current_user.like_workouts.order(created_at: :desc).page(params[:page]).per(25)
   end
 
   def create

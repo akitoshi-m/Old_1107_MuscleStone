@@ -115,30 +115,10 @@ h1, h2 {
   }
 }
 
-
-
-
 .form-control {
   height: 45px;
 }
 
-.users-new-wrapper {
-  width: 100vw;
-  height: 125vh;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #464646;
-
-  .users-new-container {
-    padding-top: 220px;
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-  }
-}
 
 //アラート表示
 .alert {
@@ -180,7 +160,9 @@ h1, h2 {
 
 //新規投稿ページのCSS
 .workout-new-wrapper {
-  padding-top: 120px;
+  padding-top: 70px;
+  background-color: #DDD;
+  height: 90vh;
 }
 
 //投稿一覧ページトップ
@@ -216,6 +198,26 @@ h1, h2 {
       width: 35px;
       height: 30px;
       margin-left: 20px;
+    }
+  }
+}
+//ユーザー関連
+
+//ユーザー新規登録ページ
+.users-new-wrapper {
+  width: 100vw;
+  height: 125vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+
+  .users-new-container {
+    padding-top: 220px;
+
+    .form-group {
+      margin-bottom: 20px;
     }
   }
 }
@@ -259,6 +261,7 @@ h1, h2 {
       color: #ff7c5c;/*文字色*/
       font-weight: bold;
       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+      margin: 0.5em 0 0;
     }
     
     .status-value {
@@ -267,10 +270,18 @@ h1, h2 {
     }
     
     ul {
+      padding: 0;
       list-style: none;
     }
   }
 }
+
+.user-edit-wrapper {
+  background-color: #DDD;
+  height: 90vh;
+}
+
+
 //ユーザーのトレーニングデータ
 .user-data-wrapper { 
   background-color: #DDD;
@@ -278,6 +289,7 @@ h1, h2 {
     padding-top: 10px;
     width: 300px;
     height: 300px;
+
   }
 
   .data-sub-title {
@@ -300,6 +312,12 @@ h1, h2 {
   }
 }
 
+//ユーザー一覧ページ
+
+.users-index-wrapper {
+  padding-top: 70px;
+  background-color: #EEE;
+}
 
 //いいね一覧ページのCSS
 .likes-index-wrapper {

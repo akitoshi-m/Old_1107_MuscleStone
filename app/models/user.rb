@@ -17,7 +17,8 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships,source: :follower
   #:sourceキーで参照先を指定できる
   
-  mount_uploader :image, ImageUploader
+  mount_uploader :image_icon, ImageUploader
+  mount_uploader :image_background, ImageUploader
   
   #ユーザーをフォローする
   def follow(other_user)
