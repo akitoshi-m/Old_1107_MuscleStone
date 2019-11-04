@@ -1,16 +1,21 @@
 <div class="user-edit-wrapper">
   <div class="container">
     <div class="row">
-      <div class="user-edit-heading">
-        <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="user-edit-heading">
           <h2 class="title">プロフィール編集</h2>
           <%= form_for @user do |f| %>
             <%= f.hidden_field :password, :value => @user.password %>            
             <%= f.hidden_field :password_confirmation, :value => @user.password_confirmation %>  
             <!-- プロフィール画像編集 -->
             <div class="form-group">
-              <%= f.label :プロフィール画像 %>
-              <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/png' %>
+              <%= f.label :アイコン画像 %>
+              <%= f.file_field :image_icon, accept: 'image/jpg,image/jpeg,image/png' %>
+            </div>
+            <!-- 背景画像編集 -->
+            <div class="form-group">
+              <%= f.label :背景画像 %>
+              <%= f.file_field :image_background, accept: 'image/jpg,image/jpeg,image/png' %>
             </div>
             <!-- 名前編集 -->
             <div class="form-group">

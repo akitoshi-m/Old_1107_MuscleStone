@@ -1,8 +1,9 @@
 <div class="user-top-wrapper">
-  <%= image_tag('silentsiren.jpg', class: "user-background-image") %>
+  <%= image_tag @user.image_background.url, class:"user-background-image" %>
+  <%#= image_tag('silentsiren.jpg', class: "user-background-image") %>
   <div>
-    <%#= image_tag @user.image_name.url %>
-    <%= image_tag('icons/kawauso.png', class:"user-icon") %>
+    <%= image_tag @user.image_icon.url, class:"user-icon" %>
+    <%#= image_tag('icons/kawauso.png', class:"user-icon") %>
   </div>
   <div class="container">
     <div class="row">
