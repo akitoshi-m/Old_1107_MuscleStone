@@ -1,0 +1,14 @@
+.users-new-wrapper
+  .container
+    .row
+      .col-md-offset-4.col-md-4.users-new-container
+        h1.text-center.text-white
+          | ログイン
+        = form_for :session, url: login_path do |f|
+          .form-group
+            = f.label :email, class: "text-white"
+            = f.text_field :email, class: "form-control", id: "session_email"
+          .form-group
+            = f.label :password, class: "text-white"
+            = f.password_field :password, class: "form-control", id: "session_password"
+          = f.submit "ログイン", class: "btn-block btn-white", id: "login_button"

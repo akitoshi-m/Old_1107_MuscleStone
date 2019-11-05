@@ -1,0 +1,15 @@
+.users-index-wrapper
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.user-index-heading
+          | ユーザー一覧
+        = paginate @users
+        - @users.each do |user|
+          |  　 
+          .user-index-single
+            p.user-right
+              - #= link_to user_path(user_id: user.id) do
+                = link_to "#" do
+                  = user.name
+        = paginate @users

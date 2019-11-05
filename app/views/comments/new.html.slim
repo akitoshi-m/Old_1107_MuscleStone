@@ -1,0 +1,12 @@
+.workout-new-wrapper
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.text-center
+          | コメント追加
+        = form_with url: '/workouts/' + @workout_id.to_s + '/comments' ,local: true do |f|
+          .form-group
+            = f.label :content
+            = f.text_area :content, class: 'form-control'
+          - if logged_in?
+            = f.submit '送信', class: 'btn btn-black btn-block'

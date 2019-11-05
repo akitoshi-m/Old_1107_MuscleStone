@@ -1,0 +1,45 @@
+.top-wrapper.text-center
+  .container.top-container
+    .row
+      .col-md-6.col-md-offset-3
+        .title
+          h1.text-shadow
+            | MuscleStone
+      .col-md-8.col-md-offset-2
+        p.text-shadow.sub-title
+          | 常に高みを目指す貴方へ向けた筋トレ管理アプリです。
+      .col-md-6.col-md-offset-3
+        = link_to "アカウント登録", '/users/new',  class: 'btn btn-block btn-white'
+        = link_to "ログイン", 'sessions/new',      class: 'btn btn-block btn-white'
+        = form_for(:session, url: login_path) do |f|
+          = f.hidden_field :email, value: 'kawauso@aaa.com'
+          = f.hidden_field :password, value: 'kawauso12'
+          = f.submit 'テストユーザーとしてログイン', class: 'btn btn-block btn-white'
+.service-introduction-wrapper
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        .service-title.text-center
+          h1.title
+            | MuscleStoneとは
+        .service-explanation
+          h3.service-point.text-center.fas.fa-comments
+            |  トレーニング内容を共有できるSNSサービス
+        .service-explanation
+          h3.service-point.text-center.fas.fa-dumbbell
+            |  自分専用のセットメニューを作成できる
+        .service-explanation
+          h3.service-point.text-center.fas.fa-chart-line
+            |  体重の変化をグラフで管理&確認ができる
+    .row
+      .col-md-4.col-md-offset-0.col-xs-8.col-xs-offset-2.image
+        = image_tag('icons/f_duck.jpg')
+      .col-md-4.col-md-offset-0.col-xs-8.col-xs-offset-2.image
+        = image_tag('icons/f_duck.jpg')
+      .col-md-4.col-md-offset-0.col-xs-8.col-xs-offset-2.image
+        = image_tag('icons/f_duck.jpg')
+    .text-center
+      = form_for(:session, url: login_path) do |f|
+        = f.hidden_field :email, value: 'kawauso@aaa.com'
+        = f.hidden_field :password, value: 'kawauso12'
+        = f.submit 'テストユーザーとしてログイン', class: 'btn btn-primary btn-lg'

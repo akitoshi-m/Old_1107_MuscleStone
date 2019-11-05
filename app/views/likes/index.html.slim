@@ -1,0 +1,24 @@
+.likes-index-wrapper
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.likes-heading
+          | いいね一覧
+        = paginate @like_workouts
+        - @like_workouts.each do |workout|
+          .like_workouts-index
+            h2.workout-author
+              = link_to "#" do
+                = workout.user.name
+            p.workout-
+              = image_tag workout.image.url if workout.image?
+            p.workout-text
+              = workout.description
+            - if !workout.like_users.include?(current_user)
+              = link_to likes_path(workout_id: workout.id), method: :post do
+                i.far.fa-heart.like-btn
+            - else
+              = link_to likes_path(workout_id: workout.id), method: :delete do
+                i.fas.fa-heart.unlike-btn
+            = workout.like_users.count
+            |  <i class="far fa-comment", class: 'workout-index-icon'>

@@ -57,6 +57,8 @@ gem 'faker', '1.7.3'
 gem 'kaminari'
 gem 'gon'
 gem 'factory_bot_rails', '~> 4.11'
+gem 'slim-rails'
+gem 'html2slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

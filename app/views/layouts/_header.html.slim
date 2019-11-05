@@ -1,0 +1,45 @@
+- flash.each do |key, value|
+  |  <div class="alert alert-
+  = key
+  | " role="alert">
+  = value
+nav.navbar.navbar-default.navbar-fixed.navbar-transparent
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to root_path do
+        span
+          = image_tag "icons/MuscleStone-logo-red.png", alt: "MuscleStone", class: "navbar-logo navbar-left"
+    - if logged_in?
+      ul#navbar.nav.navbar-nav.navbar-right.navbar-collapse.collapse
+        li
+          = link_to workouts_path do
+            span
+              i.fas.fa-comments
+                | 投稿一覧
+        li
+          = link_to users_path do
+            span
+              i.fas.fa-users
+                | ユーザー一覧
+        li
+          = link_to likes_index_path do
+            span
+              i.fas.fa-heart
+                | いいね一覧
+        li
+          = link_to new_workout_path do
+            span
+              i.fas.fa-file-signature
+                | 投稿する
+        li
+          = link_to user_path(current_user.id) do
+            span
+              i.fas.fa-user
+                | マイページ
+    - else

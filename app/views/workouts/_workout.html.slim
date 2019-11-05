@@ -1,0 +1,33 @@
+.workout-index-wrapper
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.workout-heading
+          | 筋トレ日記
+        = paginate @workouts
+        - @workouts.each do |workout|
+          .workout-index
+            h2.workout-author
+              = link_to "#" do
+                = workout.user.name
+            p
+              = image_tag workout.image.url if workout.image?
+            p.workout-text
+              = link_to workout_path(id: workout.id) do
+                = workout.description
+            .workout-index-icon
+              - if !workout.like_users.include?(current_user)
+                = link_to likes_path(workout_id: workout.id), method: :post do
+                  i.far.fa-heart.like-btn
+              - else
+                = link_to likes_path(workout_id: workout.id), method: :delete do
+                  i.fas.fa-heart.unlike-btn
+              = workout.like_users.count
+              = link_to comments_new_path(workout_id: workout.id), method: :get do
+                i.far.fa-comment
+            .comment
+              | みんなのコメント
+            - workout.comments.each do |comment|
+              p
+                = comment.content
+        = paginate @workouts
