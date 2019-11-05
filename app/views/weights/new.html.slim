@@ -1,0 +1,21 @@
+h1
+  | Weights#new
+p
+  | Find me in app/views/weights/new.html.erb
+h1
+  | 自分の体重を入力しよう！
+h2
+  | 目標に向かって一歩ずつ！
+h2
+  | ここに体重入力のフィールドを作る
+h2
+  | ここに日付入力のフィールドを作る
+.weight-new-wrapper
+  = form_for @weight do |f|
+    .form-group
+      = f.label :体重入力, class: 'text-black'
+      = f.number_field :weight, class: 'form-control'
+    .form-group
+      = f.label :日付入力, class: 'text-black'
+      = f.date_select :measure_date, class: 'form-control'
+    = f.submit '完了', class: 'btn btn-primary'

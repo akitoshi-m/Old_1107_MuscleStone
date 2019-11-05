@@ -1,0 +1,26 @@
+.workout-index-wrapper
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.menu-heading
+          | ○○さんのトレーニングメニュー
+        .add-training
+          = link_to new_menu_path do
+            p
+              | トレーニングメニュー追加
+        - @menus.each do |menu|
+          .menu-index
+            p.training-name
+              = menu.part
+            p.training_name
+              = menu.training_name
+            p.weight
+              = menu.weight
+            p.rep
+              = menu.rep
+            p.rep
+              = menu.rep
+            p.set
+              = menu.set
+            p.comment
+              = menu.comment

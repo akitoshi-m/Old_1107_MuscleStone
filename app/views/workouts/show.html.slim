@@ -1,0 +1,25 @@
+.workout-show-wrapper
+  .container
+    h1.users-heading
+      | 投稿詳細ページ
+    .row
+      .col-md-6.col-md-offset-3
+        .workout-show
+          h2.workout-author
+            = @workout.user.name
+          p.workout-text
+            = @workout.description
+          - if !@workout.like_users.include?(current_user)
+            = link_to likes_path(id: @workout.id), method: :post do
+              i.far.fa-heart.like-btn
+          - else
+            = link_to likes_path(id: @workout.id), method: :delete do
+              i.fas.fa-heart.unlike-btn
+          = @workout.like_users.count
+          = link_to comments_new_path(id: @workout.id), method: :get do
+            i.far.fa-comment
+          .workout-time
+            = @workout.created_at
+          = link_to workout_path(id: @workout.id), method: :delete do
+            .destroy-btn
+              | 削除
