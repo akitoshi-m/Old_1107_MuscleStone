@@ -15,31 +15,26 @@
           = f.hidden_field :email, value: 'kawauso@aaa.com'
           = f.hidden_field :password, value: 'kawauso12'
           = f.submit 'テストユーザーとしてログイン', class: 'btn btn-block btn-white'
-.service-introduction-wrapper
-  .container
-    .row
-      .col-md-6.col-md-offset-3
-        .service-title.text-center
-          h1.title
-            | MuscleStoneとは
-        .service-explanation
-          h3.service-point.text-center.fas.fa-comments
-            |  トレーニング内容を共有できるSNSサービス
-        .service-explanation
-          h3.service-point.text-center.fas.fa-dumbbell
-            |  自分専用のセットメニューを作成できる
-        .service-explanation
-          h3.service-point.text-center.fas.fa-chart-line
-            |  体重の変化をグラフで管理&確認ができる
-    .row
-      .col-md-4.col-md-offset-0.col-xs-8.col-xs-offset-2.image
-        = image_tag('icons/f_duck.jpg')
-      .col-md-4.col-md-offset-0.col-xs-8.col-xs-offset-2.image
-        = image_tag('icons/f_duck.jpg')
-      .col-md-4.col-md-offset-0.col-xs-8.col-xs-offset-2.image
-        = image_tag('icons/f_duck.jpg')
-    .text-center
-      = form_for(:session, url: login_path) do |f|
-        = f.hidden_field :email, value: 'kawauso@aaa.com'
-        = f.hidden_field :password, value: 'kawauso12'
-        = f.submit 'テストユーザーとしてログイン', class: 'btn btn-primary btn-lg'
+
+.service-introduction
+  .service-title.text-center
+    h1.title MuscleStoneとは？
+  .service-all-item
+    .item
+      i.fas.fa-comments
+      p.explanation ①トレーニング内容を共有できるSNSサービス
+      = image_tag('icons/f_wine.png')
+    .item
+      i.fas.fa-dumbbell
+      p.explanation ②自分専用のセットメニューを作成できる
+      = image_tag('icons/f_wine.png')
+    .item
+      i.fas.fa-chart-line
+      p.explanation ③体重の変化をグラフで管理&確認ができる
+      = image_tag('icons/f_wine.png')
+
+  .text-center
+    = form_for(:session, url: login_path) do |f|
+      = f.hidden_field :email, value: 'kawauso@aaa.com'
+      = f.hidden_field :password, value: 'kawauso12'
+      = f.submit 'テストユーザーとしてログイン', class: 'btn btn-primary btn-lg'
